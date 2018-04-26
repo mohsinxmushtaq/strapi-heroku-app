@@ -4,7 +4,7 @@
     "source": {
       "development": "/analytics/main.js",
       "production": "/analytics/main.js",
-      "test": "/analytics/main.js"
+      "staging": "/analytics/main.js"
     }
   },
   {
@@ -12,7 +12,7 @@
     "source": {
       "development": "/content-manager/main.js",
       "production": "/content-manager/main.js",
-      "test": "/content-manager/main.js"
+      "staging": "/content-manager/main.js"
     }
   },
   {
@@ -20,7 +20,7 @@
     "source": {
       "development": "/content-type-builder/main.js",
       "production": "/content-type-builder/main.js",
-      "test": "/content-type-builder/main.js"
+      "staging": "/content-type-builder/main.js"
     }
   },
   {
@@ -28,7 +28,7 @@
     "source": {
       "development": "/email/main.js",
       "production": "/email/main.js",
-      "test": "/email/main.js"
+      "staging": "/email/main.js"
     }
   },
   {
@@ -36,7 +36,15 @@
     "source": {
       "development": "/settings-manager/main.js",
       "production": "/settings-manager/main.js",
-      "test": "/settings-manager/main.js"
+      "staging": "/settings-manager/main.js"
+    }
+  },
+  {
+    "id": "upload",
+    "source": {
+      "development": "/upload/main.js",
+      "production": "/upload/main.js",
+      "staging": "/upload/main.js"
     }
   },
   {
@@ -44,7 +52,7 @@
     "source": {
       "development": "/users-permissions/main.js",
       "production": "/users-permissions/main.js",
-      "test": "/users-permissions/main.js"
+      "staging": "/users-permissions/main.js"
     }
   }
 ]

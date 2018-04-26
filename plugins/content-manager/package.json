@@ -1,8 +1,8 @@
 {
   "_from": "strapi-plugin-content-manager@alpha",
-  "_id": "strapi-plugin-content-manager@3.0.0-alpha.9.3",
+  "_id": "strapi-plugin-content-manager@3.0.0-alpha.12.0.1",
   "_inBundle": false,
-  "_integrity": "sha512-OAKWbN/2xXpo1DxvbMUB+jx6h7gZZ/Lmzt/LZbwKbwIYysdISU6eJN26w7xAjBzCzRqLITg6zpYX8ZutaxtvEw==",
+  "_integrity": "sha512-2zRMgP1RNeZna6WyZwPjaUl1XvDA+S6L0g5Rs9jGIw5ltudK1seKuxpiWBZ5zbf5xsr1FpR5X0C6WWcsaO8rkQ==",
   "_location": "/strapi-plugin-content-manager",
   "_phantomChildren": {},
   "_requested": {
@@ -18,10 +18,10 @@
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "https://registry.npmjs.org/strapi-plugin-content-manager/-/strapi-plugin-content-manager-3.0.0-alpha.9.3.tgz",
-  "_shasum": "d43c39db9e01d1ef0b46bd7dc0e8bcaae6faf760",
+  "_resolved": "https://registry.npmjs.org/strapi-plugin-content-manager/-/strapi-plugin-content-manager-3.0.0-alpha.12.0.1.tgz",
+  "_shasum": "a0b67101e1e67fe33e32f549263850d35c48ecc5",
   "_spec": "strapi-plugin-content-manager@alpha",
-  "_where": "/Users/pierreburgy/Sites/sandbox/strapi-sample-app",
+  "_where": "/Users/pierreburgy/Desktop/strapi-heroku-app",
   "author": {
     "name": "Strapi team",
     "email": "hi@strapi.io",
@@ -35,10 +35,10 @@
   "description": "A powerful UI to easily manage your data.",
   "devDependencies": {
     "react-select": "^1.0.0-rc.5",
-    "strapi-helper-plugin": "3.0.0-alpha.9.3"
+    "strapi-helper-plugin": "3.0.0-alpha.12.0.1"
   },
   "engines": {
-    "node": ">= 8.0.0",
+    "node": ">= 9.0.0",
     "npm": ">= 3.0.0"
   },
   "homepage": "https://github.com/strapi/strapi#readme",
@@ -75,5 +75,5 @@
     "icon": "plug",
     "description": "content-manager.plugin.description"
   },
-  "version": "3.0.0-alpha.9.3"
+  "version": "3.0.0-alpha.12.0.1"
 }

@@ -1,8 +1,8 @@
 {
   "_from": "strapi-plugin-content-type-builder@alpha",
-  "_id": "strapi-plugin-content-type-builder@3.0.0-alpha.9.3",
+  "_id": "strapi-plugin-content-type-builder@3.0.0-alpha.12.0.1",
   "_inBundle": false,
-  "_integrity": "sha512-0yEVvczr1EYOjJ+QGpdGTq3IakgkBfqk7aBti0UAplZFamgNbZuNDTLr9291iaMkkv4uyasLe9wXJSJ4ffL0Gw==",
+  "_integrity": "sha512-avIS0Afbszw9cQg7AhRG/fvWvx0KEjbmfKSohwyNCy3EKPwKbvfYMC+/68i2JdRCa4oGFikZ4RemSRE0EbpU8A==",
   "_location": "/strapi-plugin-content-type-builder",
   "_phantomChildren": {},
   "_requested": {
@@ -18,10 +18,10 @@
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "https://registry.npmjs.org/strapi-plugin-content-type-builder/-/strapi-plugin-content-type-builder-3.0.0-alpha.9.3.tgz",
-  "_shasum": "8397b2938e1489b03222d21c3874ebbf458a19c0",
+  "_resolved": "https://registry.npmjs.org/strapi-plugin-content-type-builder/-/strapi-plugin-content-type-builder-3.0.0-alpha.12.0.1.tgz",
+  "_shasum": "a7d496da46e6b1d8afeb9a4af1ee2cff0f8016ae",
   "_spec": "strapi-plugin-content-type-builder@alpha",
-  "_where": "/Users/pierreburgy/Sites/sandbox/strapi-sample-app",
+  "_where": "/Users/pierreburgy/Desktop/strapi-heroku-app",
   "author": {
     "name": "Strapi team",
     "email": "hi@strapi.io",
@@ -33,16 +33,16 @@
   "bundleDependencies": false,
   "dependencies": {
     "pluralize": "^7.0.0",
-    "strapi-generate": "3.0.0-alpha.9.3",
-    "strapi-generate-api": "3.0.0-alpha.9.3"
+    "strapi-generate": "3.0.0-alpha.12.0.1",
+    "strapi-generate-api": "3.0.0-alpha.12.0.1"
   },
   "deprecated": false,
   "description": "Strapi plugin to create content type (API).",
   "devDependencies": {
-    "strapi-helper-plugin": "3.0.0-alpha.9.3"
+    "strapi-helper-plugin": "3.0.0-alpha.12.0.1"
   },
   "engines": {
-    "node": ">= 8.0.0",
+    "node": ">= 9.0.0",
     "npm": ">= 3.0.0"
   },
   "homepage": "https://github.com/strapi/strapi#readme",
@@ -79,5 +79,5 @@
     "icon": "paint-brush",
     "description": "content-type-builder.plugin.description"
   },
-  "version": "3.0.0-alpha.9.3"
+  "version": "3.0.0-alpha.12.0.1"
 }

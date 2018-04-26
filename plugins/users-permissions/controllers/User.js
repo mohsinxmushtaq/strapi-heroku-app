@@ -70,7 +70,12 @@ module.exports = {
    */
 
   create: async (ctx) => {
-    if (strapi.plugins['users-permissions'].config.advanced.unique_email && ctx.request.body.email) {
+    if ((await strapi.store({
+      environment: '',
+      type: 'plugin',
+      name: 'users-permissions',
+      key: 'advanced'
+    }).get()).unique_email && ctx.request.body.email) {
       const user = await strapi.query('user', 'users-permissions').findOne({ email: ctx.request.body.email });
 
       if (user) {
@@ -85,7 +90,6 @@ module.exports = {
     } catch(error) {
       ctx.badRequest(null, ctx.request.admin ? [{ messages: [{ id: error.message, field: error.field }] }] : error.message);
     }
-
   },
 
   /**
@@ -96,7 +100,14 @@ module.exports = {
 
   update: async (ctx, next) => {
     try {
-      if (strapi.plugins['users-permissions'].config.advanced.unique_email && ctx.request.body.email) {
+      const advancedConfigs = await strapi.store({
+        environment: '',
+        type: 'plugin',
+        name: 'users-permissions',
+        key: 'advanced'
+      }).get();
+
+      if (advancedConfigs.unique_email && ctx.request.body.email) {
         const users = await strapi.plugins['users-permissions'].services.user.fetchAll({ email: ctx.request.body.email });
 
         if (users && _.find(users, user => (user.id || user._id).toString() !== ctx.params.id)) {
@@ -114,12 +125,12 @@ module.exports = {
         delete ctx.request.body.role;
       }
 
-      if (ctx.request.body.email && strapi.plugins['users-permissions'].config.advanced.unique_email) {
+      if (ctx.request.body.email && advancedConfigs.unique_email) {
         const user = await strapi.query('user', 'users-permissions').findOne({
           email: ctx.request.body.email
         });
 
-        if ((user.id || user._id).toString() !== ctx.params.id) {
+        if (user !== null && (user.id || user._id).toString() !== ctx.params.id) {
           return ctx.badRequest(null, ctx.request.admin ? [{ messages: [{ id: 'Auth.form.error.email.taken' }] }] : 'Email is already taken.');
         }
       }

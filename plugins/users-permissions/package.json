@@ -1,8 +1,8 @@
 {
   "_from": "strapi-plugin-users-permissions@alpha",
-  "_id": "strapi-plugin-users-permissions@3.0.0-alpha.9.3",
+  "_id": "strapi-plugin-users-permissions@3.0.0-alpha.12.0.1",
   "_inBundle": false,
-  "_integrity": "sha512-0scpKA9u080SpunJyHJL7px/BUSpuX3BNdcRTGLY+4Hoinab0Ety1Efs92WEaLvp0/9xCn5IbvChFN5qsLaC/g==",
+  "_integrity": "sha512-KqcUGJiVjZnKGVSTWA/zRQWdkIkTRtrjNk2sePEvoWQ35up5f7PBO1OwsEbDq3r0xPww99OKnX+/V7JjVz27ZA==",
   "_location": "/strapi-plugin-users-permissions",
   "_phantomChildren": {},
   "_requested": {
@@ -18,10 +18,10 @@
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "https://registry.npmjs.org/strapi-plugin-users-permissions/-/strapi-plugin-users-permissions-3.0.0-alpha.9.3.tgz",
-  "_shasum": "d0d0c1707701e0b9ce3bed2401510a920dc17747",
+  "_resolved": "https://registry.npmjs.org/strapi-plugin-users-permissions/-/strapi-plugin-users-permissions-3.0.0-alpha.12.0.1.tgz",
+  "_shasum": "4e5823b59aeb46ba5b1de2e83ef104cf87c696e9",
   "_spec": "strapi-plugin-users-permissions@alpha",
-  "_where": "/Users/pierreburgy/Sites/sandbox/strapi-sample-app",
+  "_where": "/Users/pierreburgy/Desktop/strapi-heroku-app",
   "author": {
     "name": "Strapi team",
     "email": "hi@strapi.io",
@@ -43,7 +43,7 @@
   "deprecated": false,
   "description": "Protect your API with a full-authentication process based on JWT",
   "devDependencies": {
-    "strapi-helper-plugin": "3.0.0-alpha.9.3"
+    "strapi-helper-plugin": "3.0.0-alpha.12.0.1"
   },
   "engines": {
     "node": ">= 7.0.0",
@@ -79,9 +79,9 @@
     "test": "npm run lint"
   },
   "strapi": {
-    "name": "Auth & Permissions",
+    "name": "Roles & Permissions",
     "icon": "users",
     "description": "users-permissions.plugin.description"
   },
-  "version": "3.0.0-alpha.9.3"
+  "version": "3.0.0-alpha.12.0.1"
 }

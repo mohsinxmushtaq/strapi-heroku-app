@@ -7,6 +7,12 @@ const _ = require('lodash');
  */
 
 module.exports = {
+  layout: async (ctx) => {
+    const {source} = ctx.query;
+
+    return ctx.send(_.get(strapi.plugins, [source, 'config', 'layout'], {}));
+  },
+
   models: async ctx => {
     const pickData = (model) => _.pick(model, [
       'info',
@@ -22,8 +28,11 @@ module.exports = {
       'associations'
     ]);
 
+    const models = _.mapValues(strapi.models, pickData);
+    delete models['core_store'];
+
     ctx.body = {
-      models: _.mapValues(strapi.models, pickData),
+      models,
       plugins: Object.keys(strapi.plugins).reduce((acc, current) => {
         acc[current] = {
           models: _.mapValues(strapi.plugins[current].models, pickData)
@@ -70,6 +79,7 @@ module.exports = {
       // Create an entry using `queries` system
       ctx.body = await strapi.plugins['content-manager'].services['contentmanager'].add(ctx.params, ctx.request.body, source);
     } catch(error) {
+      strapi.log.error(error);
       ctx.badRequest(null, ctx.request.admin ? [{ messages: [{ id: error.message, field: error.field }] }] : error.message);
     }
   },
@@ -82,6 +92,7 @@ module.exports = {
       ctx.body = await strapi.plugins['content-manager'].services['contentmanager'].edit(ctx.params, ctx.request.body, source);
     } catch(error) {
       // TODO handle error update
+      strapi.log.error(error);
       ctx.badRequest(null, ctx.request.admin ? [{ messages: [{ id: error.message, field: error.field }] }] : error.message);
     }
   },

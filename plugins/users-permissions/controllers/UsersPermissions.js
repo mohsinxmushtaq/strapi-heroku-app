@@ -44,14 +44,14 @@ module.exports = {
   },
 
   deleteRole: async ctx => {
-    // Fetch root and guest role.
-    const [root, guest] = await Promise.all([
+    // Fetch root and public role.
+    const [root, publicRole] = await Promise.all([
       strapi.query('role', 'users-permissions').findOne({ type: 'root' }),
-      strapi.query('role', 'users-permissions').findOne({ type: 'guest' })
+      strapi.query('role', 'users-permissions').findOne({ type: 'public' })
     ]);
 
     const rootID = root.id || root._id;
-    const guestID = guest.id || guest._id;
+    const publicRoleID = publicRole.id || publicRole._id;
 
     const roleID = ctx.params.role;
 
@@ -60,12 +60,12 @@ module.exports = {
     }
 
     // Prevent from removing the root role.
-    if (roleID.toString() === rootID.toString() || roleID.toString() === guestID.toString()) {
+    if (roleID.toString() === rootID.toString() || roleID.toString() === publicRoleID.toString()) {
       return ctx.badRequest(null, [{ messages: [{ id: 'Unauthorized' }] }]);
     }
 
     try {
-      await strapi.plugins['users-permissions'].services.userspermissions.deleteRole(roleID, guestID);
+      await strapi.plugins['users-permissions'].services.userspermissions.deleteRole(roleID, publicRoleID);
 
       ctx.send({ ok: true });
     } catch(err) {
@@ -171,7 +171,12 @@ module.exports = {
   },
 
   getEmailTemplate: async (ctx) => {
-    ctx.send(strapi.plugins['users-permissions'].config.email);
+    ctx.send(await strapi.store({
+      environment: '',
+      type: 'plugin',
+      name: 'users-permissions',
+      key: 'email'
+    }).get());
   },
 
   updateEmailTemplate: async (ctx) => {
@@ -179,19 +184,26 @@ module.exports = {
       return ctx.badRequest(null, [{ messages: [{ id: 'Cannot be empty' }] }]);
     }
 
-    strapi.reload.isWatching = false;
-
-    fs.writeFileSync(path.join(strapi.config.appPath, 'plugins', 'users-permissions', 'config', 'email.json'), JSON.stringify({
-      email: ctx.request.body
-    }, null, 2), 'utf8');
+    await strapi.store({
+      environment: '',
+      type: 'plugin',
+      name: 'users-permissions',
+      key: 'email'
+    }).set({value: ctx.request.body})
 
     ctx.send({ ok: true });
-
-    strapi.reload();
   },
 
   getAdvancedSettings: async (ctx) => {
-    ctx.send(strapi.plugins['users-permissions'].config.advanced);
+    ctx.send({
+      settings: await strapi.store({
+        environment: '',
+        type: 'plugin',
+        name: 'users-permissions',
+        key: 'advanced'
+      }).get(),
+      roles: await strapi.plugins['users-permissions'].services.userspermissions.getRoles()
+    });
   },
 
   updateAdvancedSettings: async (ctx) => {
@@ -199,19 +211,23 @@ module.exports = {
       return ctx.badRequest(null, [{ messages: [{ id: 'Cannot be empty' }] }]);
     }
 
-    strapi.reload.isWatching = false;
-
-    fs.writeFileSync(path.join(strapi.config.appPath, 'plugins', 'users-permissions', 'config', 'advanced.json'), JSON.stringify({
-      advanced: ctx.request.body
-    }, null, 2), 'utf8');
+    await strapi.store({
+      environment: '',
+      type: 'plugin',
+      name: 'users-permissions',
+      key: 'advanced'
+    }).set({value: ctx.request.body})
 
     ctx.send({ ok: true });
-
-    strapi.reload();
   },
 
   getProviders: async (ctx) => {
-    ctx.send(strapi.plugins['users-permissions'].config.grant);
+    ctx.send(await strapi.store({
+      environment: '',
+      type: 'plugin',
+      name: 'users-permissions',
+      key: 'grant'
+    }).get());
   },
 
   updateProviders: async (ctx) => {
@@ -219,15 +235,13 @@ module.exports = {
       return ctx.badRequest(null, [{ messages: [{ id: 'Cannot be empty' }] }]);
     }
 
-    strapi.reload.isWatching = false;
-
-    fs.writeFileSync(path.join(strapi.config.appPath, 'plugins', 'users-permissions', 'config', 'grant.json'), JSON.stringify({
-      grant: ctx.request.body
-    }, null, 2), 'utf8');
-
+    await strapi.store({
+      environment: '',
+      type: 'plugin',
+      name: 'users-permissions',
+      key: 'grant'
+    }).set({value: ctx.request.body})
 
     ctx.send({ ok: true });
-
-    strapi.reload();
   }
 };

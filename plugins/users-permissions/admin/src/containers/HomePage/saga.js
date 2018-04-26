@@ -68,10 +68,11 @@ export function* dataFetch(action) {
 export function* submitData(action) {
   try {
     const body = yield select(makeSelectModifiedData());
-    const opts = { method: 'PUT', body };
+    const opts = { method: 'PUT', body: (action.endPoint === 'advanced') ? body.settings : body };
 
-    yield call(request, `/users-permissions/${action.endPoint}`, opts, true);
+    yield call(request, `/users-permissions/${action.endPoint}`, opts);
     yield put(submitSucceeded());
+    strapi.notification.success('users-permissions.notification.success.submit');
   } catch(error) {
     strapi.notification.error('notification.error');
   }

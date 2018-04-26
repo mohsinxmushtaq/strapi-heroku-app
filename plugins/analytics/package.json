@@ -1,8 +1,8 @@
 {
   "_from": "strapi-plugin-analytics@alpha",
-  "_id": "strapi-plugin-analytics@0.0.2",
+  "_id": "strapi-plugin-analytics@3.0.0-alpha.11.1",
   "_inBundle": false,
-  "_integrity": "sha512-M0+z0CoSb/rzz9cpDlrEuctKghpg8TfpE1hwKukiNTCo3Wfjpk5W3ZtAap4Eq6in0JpT3YKbUxStUCZhf8EcOA==",
+  "_integrity": "sha512-2XzV8TfRSYyrbncPJEWIj7CdpxqCwdl8EJZg7YCUjXM2E2IXwF/304o1dNHyfGrWzKX2uRYn86u6K596l0oc1g==",
   "_location": "/strapi-plugin-analytics",
   "_phantomChildren": {},
   "_requested": {
@@ -18,10 +18,10 @@
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "https://registry.npmjs.org/strapi-plugin-analytics/-/strapi-plugin-analytics-0.0.2.tgz",
-  "_shasum": "7411f27291d1cc81f462ff80bb9defa867256c0d",
+  "_resolved": "https://registry.npmjs.org/strapi-plugin-analytics/-/strapi-plugin-analytics-3.0.0-alpha.11.1.tgz",
+  "_shasum": "eaa83394f93f7a82411a318768771cca38695514",
   "_spec": "strapi-plugin-analytics@alpha",
-  "_where": "/Users/pierreburgy/Sites/sandbox/strapi-sample-app",
+  "_where": "/Users/pierreburgy/Desktop/strapi-heroku-app",
   "author": {
     "name": "Strapi team",
     "email": "hi@strapi.io",
@@ -35,10 +35,10 @@
   "deprecated": false,
   "description": "This is the description of the plugin.",
   "devDependencies": {
-    "strapi-helper-plugin": "3.0.0-alpha.8.3"
+    "strapi-helper-plugin": "3.0.0-alpha.11.1"
   },
   "engines": {
-    "node": ">= 8.0.0",
+    "node": ">= 9.0.0",
     "npm": ">= 5.3.0"
   },
   "homepage": "https://github.com/strapi/strapi-plugin-analytics#readme",
@@ -75,5 +75,5 @@
     "icon": "area-chart",
     "description": "analytics.plugin.description"
   },
-  "version": "0.0.2"
+  "version": "3.0.0-alpha.11.1"
 }

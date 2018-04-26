@@ -1,5 +1,5 @@
 {
-  "name": "strapi-sample-app",
+  "name": "strapi-heroku-app",
   "private": true,
   "version": "0.1.0",
   "description": "A Strapi application.",
@@ -20,8 +20,8 @@
   },
   "dependencies": {
     "lodash": "4.x.x",
-    "strapi": "3.0.0-alpha.9.3",
-    "strapi-mongoose": "3.0.0-alpha.9.3",
+    "strapi": "3.0.0-alpha.12",
+    "strapi-mongoose": "3.0.0-alpha.12",
     "uuid": "^3.2.1"
   },
   "author": {

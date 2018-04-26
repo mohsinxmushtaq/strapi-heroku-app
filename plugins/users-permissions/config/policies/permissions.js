@@ -5,7 +5,11 @@ module.exports = async (ctx, next) => {
     try {
       const { _id, id } = await strapi.plugins['users-permissions'].services.jwt.getToken(ctx);
 
-      ctx.state.user = await strapi.query('user', 'users-permissions').findOne({ _id, id }, ['role']);
+      if ((id || _id) === undefined) {
+        throw new Error('Invalid token: Token did not contain required fields');
+      }
+
+      ctx.state.user = await strapi.query('user', 'users-permissions').findOne({ _id, id });
     } catch (err) {
       return ctx.unauthorized(err);
     }
@@ -20,10 +24,9 @@ module.exports = async (ctx, next) => {
       return await next();
     }
   }
-
-  // Retrieve `guest` role.
+  // Retrieve `public` role.
   if (!role) {
-    role = await strapi.query('role', 'users-permissions').findOne({ type: 'guest' }, []);
+    role = await strapi.query('role', 'users-permissions').findOne({ type: 'public' }, []);
   }
 
   const route = ctx.request.route;
@@ -36,7 +39,9 @@ module.exports = async (ctx, next) => {
   }, []);
 
   if (!permission) {
-    return ctx.unauthorized();
+    ctx.unauthorized();
+
+    return ctx.request.graphql = ctx.body;
   }
 
   // Execute the policies.

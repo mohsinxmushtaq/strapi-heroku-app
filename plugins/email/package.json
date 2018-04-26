@@ -1,8 +1,8 @@
 {
   "_from": "strapi-plugin-email@alpha",
-  "_id": "strapi-plugin-email@3.0.0-alpha.9.3",
+  "_id": "strapi-plugin-email@3.0.0-alpha.11.3",
   "_inBundle": false,
-  "_integrity": "sha512-CPSnVRi3dnIO0An2wXvw68PbZDbLYFNtTAxvSqM1h80ghq+SpxkDgvaRwLP3eRKEMGTTGgmBbGjvID5A40lkVg==",
+  "_integrity": "sha512-70uLre/AmE9pD840t45WQ08n7QcoO394IZLplQIdAz6+n5SWcsH/QHcUR4pk9oor7a6MNmXbjZ0R3txly6E3Cw==",
   "_location": "/strapi-plugin-email",
   "_phantomChildren": {},
   "_requested": {
@@ -18,10 +18,10 @@
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "https://registry.npmjs.org/strapi-plugin-email/-/strapi-plugin-email-3.0.0-alpha.9.3.tgz",
-  "_shasum": "eec1885939fb55347b4f7c5e272d338f07d2f0f4",
+  "_resolved": "https://registry.npmjs.org/strapi-plugin-email/-/strapi-plugin-email-3.0.0-alpha.11.3.tgz",
+  "_shasum": "79895a54c340ced6710307275f801c51c69d390c",
   "_spec": "strapi-plugin-email@alpha",
-  "_where": "/Users/pierreburgy/Sites/sandbox/strapi-sample-app",
+  "_where": "/Users/pierreburgy/Desktop/strapi-heroku-app",
   "author": {
     "name": "Strapi team",
     "email": "hi@strapi.io",
@@ -37,7 +37,7 @@
   "deprecated": false,
   "description": "This is the description of the plugin.",
   "devDependencies": {
-    "strapi-helper-plugin": "3.0.0-alpha.9.3"
+    "strapi-helper-plugin": "3.0.0-alpha.11.3"
   },
   "engines": {
     "node": ">= 7.0.0",
@@ -77,5 +77,5 @@
     "icon": "paper-plane",
     "description": "email.plugin.description"
   },
-  "version": "3.0.0-alpha.9.3"
+  "version": "3.0.0-alpha.11.3"
 }
