@@ -1,1 +1,39 @@
-{}
+{
+  "post": {
+    "attributes": {
+      "title": {
+        "appearance": ""
+      },
+      "slug": {
+        "appearance": ""
+      },
+      "content": {
+        "appearance": "WYSIWYG"
+      }
+    }
+  },
+  "category": {
+    "attributes": {
+      "name": {
+        "appearance": ""
+      }
+    }
+  },
+  "product": {
+    "attributes": {
+      "content": {
+        "appearance": "WYSIWYG"
+      },
+      "description": {
+        "appearance": "WYSIWYG"
+      }
+    }
+  },
+  "tag": {
+    "attributes": {
+      "name": {
+        "appearance": ""
+      }
+    }
+  }
+}

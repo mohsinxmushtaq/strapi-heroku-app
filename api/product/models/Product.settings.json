@@ -1,0 +1,30 @@
+{
+  "connection": "default",
+  "collectionName": "post",
+  "info": {
+    "name": "product",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "multiple": false,
+      "type": "string"
+    },
+    "description": {
+      "multiple": false,
+      "type": "text"
+    },
+    "images": {
+      "collection": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "categories": {
+      "collection": "category",
+      "via": "products"
+    }
+  }
+}
