@@ -17,11 +17,6 @@
       "multiple": false,
       "type": "text"
     },
-    "images": {
-      "collection": "file",
-      "via": "related",
-      "plugin": "upload"
-    },
     "categories": {
       "collection": "category",
       "via": "products"

@@ -15,8 +15,7 @@
     },
     "posts": {
       "collection": "post",
-      "via": "tags",
-      "dominant": true
+      "via": "tags"
     }
   }
 }

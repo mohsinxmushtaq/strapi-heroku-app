@@ -1,6 +1,6 @@
 {
   "connection": "default",
-  "collectionName": "",
+  "collectionName": "post",
   "info": {
     "name": "post",
     "description": ""
@@ -20,11 +20,6 @@
     "content": {
       "multiple": false,
       "type": "text"
-    },
-    "cover": {
-      "model": "file",
-      "via": "related",
-      "plugin": "upload"
     },
     "author": {
       "model": "user",
