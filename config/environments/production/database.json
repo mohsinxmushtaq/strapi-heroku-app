@@ -6,11 +6,11 @@
       "settings": {
         "client": "mongo",
         "uri": "${process.env.DATABASE_URI || ''}",
-        "host": "${process.env.DATABASE_HOST || '127.0.0.1'}",
-        "port": "${process.env.DATABASE_PORT || 27017}",
-        "database": "${process.env.DATABASE_NAME || 'strapi-production'}",
-        "username": "${process.env.DATABASE_USERNAME || ''}",
-        "password": "${process.env.DATABASE_PASSWORD || ''}",
+        "host": "${process.env.DATABASE_HOST || 'ds016138.mlab.com'}",
+        "port": "${process.env.DATABASE_PORT || 16138}",
+        "database": "${process.env.DATABASE_NAME || 'strapi-dev'}",
+        "username": "${process.env.DATABASE_USERNAME || 'admin'}",
+        "password": "${process.env.DATABASE_PASSWORD || 'password'}",
         "ssl": "${process.env.DATABASE_SSL || false}",
         "authenticationDatabase": "${process.env.DATABASE_AUTHENTICATION_DATABASE || ''}"
       },
